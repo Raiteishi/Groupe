@@ -1,0 +1,31 @@
+<div *ngIf="groupe">
+  <h2>Détail du groupe {{groupe.name}}</h2>
+  <div><label>Id du groupe : </label> {{groupe.id}}
+  <!--
+  <input #boxId [(ngModel)]="groupe.id" /></div>
+  -->
+  <div>
+    <label>name: </label>
+    
+    <input #boxName [(ngModel)]="groupe.name"  placeholder="name" />
+    <button (click)="onEnter(boxName.value,boxId.value)"> Update</button>
+  </div>
+<br>
+  <button (click)="goBack()">Back</button>
+
+  <ul class="individu">
+    <li 
+    *ngFor="let i of  individus | filterGroupe: groupe.id " 
+    [class.selected]="i === selectedIndividu" 
+    (click)="onSelect(i)">
+      <span class="badge">{{i.id}}</span> {{i.name }} &nbsp;&nbsp;|&nbsp; {{i.firstName}} 
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedIndividu">
+  <h2>
+    {{selectedIndividu.name | uppercase}} {{selectedIndividu.firstname}} is my choice
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

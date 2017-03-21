@@ -1,0 +1,42 @@
+<div *ngIf="individu">
+  <h2>{{individu.name}} details!</h2>
+  <div>
+    <label>Id de l'utilisateur : </label>{{individu.id}}</div>
+  <div>
+    <br>
+    <label>Nom : </label>
+    <input [(ngModel)]="individu.name" placeholder="Nom " />
+  </div>
+  <br>
+  <div>
+    <label>Prénom : </label>
+    <input [(ngModel)]="individu.firstName" placeholder="Prénom" />
+  </div>
+  <br>
+
+  <div>
+    <label>Numéro de téléphone : </label>
+    <input [(ngModel)]="individu.phone" placeholder="Numéro de téléphone" />
+  </div>
+  <br>
+
+  <div>
+    <label>Mail : </label>
+    <input [(ngModel)]="individu.mail" placeholder="Email" />
+  </div>
+  <br>
+
+  <div>
+    <label>Commentaire : </label>
+    <input [(ngModel)]="individu.com" placeholder="Commentaire " />
+  </div>
+  <br>
+
+  <div>
+    <label>Id du Groupe : </label>
+    <input [(ngModel)]="individu.idGroupe" placeholder="Id du Groupe" />
+  </div>
+  <br>
+  <button (click)="goBack()">Back</button>&nbsp;&nbsp;
+  <button (click)="updateIndividu(individu);"> Save </button>
+</div>

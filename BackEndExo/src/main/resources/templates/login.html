@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+</head>
+<body>
+	<h1>Connexion :</h1>
+	<form th:action="@{/login}" method="post">
+			<div>
+			<label>login : </label> <input type="text" id="username"
+				name="username" placeholder="login" />
+		</div>
+		<br />
+		<div>
+			<label>mot de passe : </label> <input type="password" id="password"
+				name="password" placeholder="mot de passe" /> 
+				
+			<button type="submit">Connexion</button>
+		</div>
+	</form>
+</body>
+</html>

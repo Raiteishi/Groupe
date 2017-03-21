@@ -1,0 +1,20 @@
+<h2>Mes Groupes</h2>
+
+<div>
+  <p> Ajouter un groupe : 
+    <input #boxGroupeName placeholder="name" />  
+    <button (click)="addNewGroupe(boxGroupeName.value);boxGroupeName.value=''" > Add </button>
+  </p>
+</div>
+<div class="grid grid-pad">
+  <a *ngFor="let g of groupes"  
+  class="col-1-4" >
+    <div class="module groupe" [routerLink]="['/detail', g.id]">
+      <h4 >{{g.name}}
+    </h4>
+    </div>
+    <button (click)="deleteGroupe(g); $event.stopPropagation()" >X</button>
+
+  </a>
+</div>
+<br>
